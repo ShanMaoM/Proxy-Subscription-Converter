@@ -1,0 +1,35 @@
+# Dependencies and generated files (including workspace packages)
+**/node_modules
+**/dist
+.pnpm-store
+.tmp
+**/*.tsbuildinfo
+**/*.log
+
+# Local configuration and project notes
+.npmrc
+.git
+**/.env
+**/.env.*
+memory-bank
+
+# Runtime data and private backups
+data
+apps/server/data
+backups
+**/*.sqlite
+**/*.sqlite3
+**/*.sqlite*-journal
+**/*.sqlite*-wal
+**/*.sqlite*-shm
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/*.db-journal
+
+# Private key material and OS metadata
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+**/.DS_Store

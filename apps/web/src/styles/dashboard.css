@@ -1,0 +1,173 @@
+.metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-bottom: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+.metric-card {
+  min-width: 0;
+  margin: 24px 0;
+  padding: 0 24px;
+}
+.metric-card + .metric-card {
+  border-left: 1px solid var(--line);
+}
+.metric-heading {
+  color: var(--muted);
+  font-size: 14px;
+}
+.metric-card > strong {
+  display: block;
+  margin: 16px 0 8px;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.metric-card strong small {
+  margin-left: 8px;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 400;
+}
+.metric-card > .metric-status {
+  font-size: 24px;
+  padding: 5px 0;
+}
+.metric-caption {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.metric-link {
+  font-size: 12px;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+.dashboard-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 44px;
+  margin-bottom: 8px;
+}
+.dashboard-section-heading h2 {
+  margin: 0;
+  font-size: 17px;
+}
+.dashboard-section-heading .text-button {
+  font-size: 12px;
+}
+.dashboard-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-height: 148px;
+  padding: 16px 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.source-overview-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.source-overview-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 18px 0;
+  border-top: 1px solid var(--divider);
+}
+.source-overview-list li > div {
+  min-width: 0;
+}
+.source-overview-list strong {
+  display: block;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.source-overview-list div > span {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.source-overview-list .status-badge {
+  flex: 0 0 auto;
+}
+.output-entry {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  text-align: left;
+  border: 0;
+  border-top: 1px solid var(--divider);
+  background: transparent;
+  color: var(--blue);
+}
+.output-entry strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+}
+.output-entry small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media (max-width: 833px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .metric-grid {
+    grid-template-columns: 1fr;
+  }
+  .metric-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+  }
+  .metric-card + .metric-card {
+    border-left: 0;
+    border-top: 1px solid var(--divider);
+  }
+  .metric-card > strong {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    margin: 0;
+    font-size: 28px;
+  }
+  .metric-card > .metric-status {
+    font-size: 21px;
+  }
+  .metric-caption,
+  .metric-link {
+    grid-column: 1;
+    justify-content: flex-start;
+    min-height: 28px;
+  }
+  .metric-link {
+    min-height: 44px;
+    margin-bottom: -8px;
+  }
+}

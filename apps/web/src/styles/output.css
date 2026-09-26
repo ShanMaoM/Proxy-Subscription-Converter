@@ -1,0 +1,327 @@
+.profile-picker {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.profile-picker label {
+  width: min(480px, 100%);
+}
+.profile-picker > span {
+  color: var(--muted);
+  font-size: 12px;
+  padding-bottom: 12px;
+}
+.profile-title-row,
+.profile-state,
+.profile-tools {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.profile-title-row {
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.profile-title-row h2 {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.profile-state {
+  flex-shrink: 0;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.profile-tools {
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 12px;
+}
+.profile-tools .delete-profile {
+  color: var(--error);
+  margin-left: auto;
+}
+.output-paused-note {
+  margin-top: 16px !important;
+  font-size: 14px;
+}
+.scope-panel {
+  padding: 0;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.scope-panel .settings-heading h2 {
+  font-size: 21px;
+}
+.scope-content {
+  display: grid;
+  gap: 24px;
+  padding: 24px 32px;
+}
+.scope-content > label,
+.profile-rule-scope > label {
+  max-width: 580px;
+}
+.source-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4px 24px;
+}
+.source-checklist label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  overflow-wrap: anywhere;
+}
+.source-checklist input {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  flex: 0 0 auto;
+  accent-color: var(--blue);
+}
+.source-checklist p,
+.profile-rule-scope p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0 12px;
+}
+.profile-rule-scope {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+}
+.output-preview {
+  margin-bottom: 24px;
+}
+.yaml-toolbar small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 6px;
+}
+.access-log-panel {
+  padding: 0;
+  overflow: hidden;
+}
+.access-log-panel h2 {
+  margin: 0;
+  font-size: 21px;
+}
+.access-row {
+  display: grid;
+  grid-template-columns: 180px minmax(180px, 1fr) 120px 100px;
+  gap: 16px;
+  padding: 16px 32px;
+  border-bottom: 1px solid var(--divider);
+  font-size: 13px;
+}
+.access-row code {
+  overflow-wrap: anywhere;
+}
+.access-header {
+  color: var(--muted);
+  font-size: 12px;
+  background: var(--pearl);
+}
+.access-failed {
+  color: var(--error);
+}
+.access-empty {
+  padding: 24px 32px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.access-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.access-pagination > div {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+@media (max-width: 833px) {
+  .profile-picker {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .profile-picker > span {
+    padding: 0;
+  }
+  .access-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .access-header {
+    display: none;
+  }
+  .access-row > *::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 6px;
+    color: var(--muted);
+    font: 12px system-ui;
+  }
+}
+@media (max-width: 640px) {
+  .scope-panel,
+  .access-log-panel {
+    padding: 0;
+  }
+  .scope-content,
+  .access-row,
+  .access-empty {
+    padding: 20px;
+  }
+  .source-checklist {
+    grid-template-columns: 1fr;
+  }
+  .profile-title-row {
+    align-items: flex-start;
+  }
+  .profile-tools {
+    gap: 12px;
+  }
+  .profile-tools .delete-profile {
+    margin-left: 0;
+  }
+  .access-pagination {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+  }
+}
+.node-filter-editor {
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  display: grid;
+  gap: 20px;
+}
+.node-filter-editor h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+.node-filter-editor small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+.availability-panel {
+  margin-bottom: 24px;
+}
+.availability-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.availability-heading h2 {
+  font-size: 21px;
+  margin: 0;
+}
+.availability-heading p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 8px 0 0;
+}
+.availability-result {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+.availability-result strong {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+}
+.availability-result > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.availability-result.ready strong {
+  color: #167247;
+}
+.availability-result.warning strong {
+  color: #956214;
+}
+.availability-result.error strong,
+.availability-result.empty strong,
+.availability-result.disabled strong {
+  color: var(--error);
+}
+.availability-checks {
+  display: grid;
+  gap: 12px;
+  padding-top: 20px;
+}
+.availability-checks > div {
+  display: grid;
+  grid-template-columns: 8px 96px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+  line-height: 1.65;
+}
+.availability-checks > div > span:last-child {
+  color: var(--muted);
+}
+.check-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #167247;
+}
+[data-status="error"] .check-dot {
+  background: var(--error);
+}
+[data-status="warning"] .check-dot {
+  background: #956214;
+}
+.availability-sources {
+  border-top: 1px solid var(--line);
+  margin-top: 20px;
+  padding-top: 16px;
+  font-size: 13px;
+}
+.availability-sources summary {
+  cursor: pointer;
+  min-height: 32px;
+  font-weight: 600;
+}
+.availability-source {
+  display: grid;
+  gap: 4px;
+  padding: 12px 0;
+  overflow-wrap: anywhere;
+}
+.availability-source span,
+.availability-source small {
+  color: var(--muted);
+}
+@media (max-width: 640px) {
+  .availability-heading {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .availability-result {
+    flex-wrap: wrap;
+  }
+  .availability-checks > div {
+    grid-template-columns: 8px minmax(0, 1fr);
+    gap: 6px 10px;
+  }
+  .availability-checks > div > span:last-child {
+    grid-column: 2;
+  }
+}

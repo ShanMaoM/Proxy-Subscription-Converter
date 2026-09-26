@@ -1,0 +1,32 @@
+{
+  "name": "subscription-converter",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.6.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev:web": "corepack pnpm --filter @subscription-converter/web dev",
+    "dev:server": "corepack pnpm --filter @subscription-converter/server dev",
+    "build": "corepack pnpm -r --if-present run build",
+    "typecheck": "corepack pnpm -r --if-present run typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "test:docker:output": "node scripts/docker-output-smoke.mjs",
+    "test:docker:persistence": "node scripts/docker-persistence-smoke.mjs",
+    "test:docker:system": "node scripts/docker-system-smoke.mjs",
+    "test:docker:multi-output": "node scripts/docker-multi-output-smoke.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "playwright-core": "^1.60.0",
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.0"
+  }
+}

@@ -1,0 +1,35 @@
+# Dependencies and generated files
+node_modules/
+/.pnpm-store/
+dist/
+/.tmp/
+*.tsbuildinfo
+*.log
+
+# Local configuration and project notes
+/memory-bank/
+.env
+.env.*
+!.env.example
+!.env.docker.example
+
+# Runtime data and private backups
+/data/
+/apps/server/data/
+/backups/
+*.sqlite
+*.sqlite3
+*.sqlite*-journal
+*.sqlite*-wal
+*.sqlite*-shm
+*.db
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Private key material and OS metadata
+*.pem
+*.key
+*.p12
+*.pfx
+.DS_Store

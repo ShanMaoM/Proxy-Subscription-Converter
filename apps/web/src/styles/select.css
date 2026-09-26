@@ -1,0 +1,132 @@
+/* The browser manages selection, keyboard navigation and focus, including in dialogs. */
+select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 40px;
+  border-color: #cdd0d5;
+  background: var(--panel)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23666b73' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E")
+    no-repeat right 13px center;
+  text-overflow: ellipsis;
+  transition:
+    border-color 140ms,
+    background-color 140ms;
+}
+select:hover:not(:disabled) {
+  border-color: #7f8998;
+  background-color: #fbfcfe;
+}
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+@supports (appearance: base-select) {
+  select,
+  select::picker(select) {
+    appearance: base-select;
+  }
+  select {
+    background-image: none;
+    padding-right: 14px;
+    align-items: center;
+    gap: 14px;
+  }
+  select::picker-icon {
+    color: #667080;
+    font-size: 12px;
+    transition: rotate 140ms;
+  }
+  select:open {
+    border-color: var(--blue);
+  }
+  select:open::picker-icon {
+    rotate: 180deg;
+  }
+  select::picker(select) {
+    margin-top: 6px;
+    border: 1px solid #cdd3dd;
+    border-radius: 12px;
+    padding: 6px;
+    background: #fff;
+    color: var(--ink);
+    inline-size: anchor-size(width);
+    min-inline-size: 0;
+    max-inline-size: min(520px, calc(100vw - 32px));
+    max-block-size: min(380px, 55vh);
+    overflow: auto;
+    scrollbar-width: thin;
+    font:
+      14px/1.5 system-ui,
+      sans-serif;
+  }
+  select option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    min-height: 42px;
+    border-radius: 7px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    cursor: pointer;
+  }
+  select option::checkmark {
+    order: 1;
+    margin-left: auto;
+    color: var(--blue);
+  }
+  select option:checked {
+    background: #edf4fe;
+    color: #004c9e;
+    font-weight: 600;
+  }
+  select option:hover,
+  select option:focus {
+    background: #f0f2f5;
+    outline: none;
+  }
+  select option:disabled {
+    color: #9298a2;
+    cursor: not-allowed;
+  }
+  select optgroup {
+    padding: 5px 0;
+  }
+  select optgroup > legend {
+    padding: 8px 12px 4px;
+    color: var(--muted);
+    font-size: 12px;
+  }
+}
+.field-help {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.check-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.check-field input {
+  width: 18px;
+  height: 18px;
+  min-height: 18px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  accent-color: var(--blue);
+}
+.check-field small {
+  display: block;
+  color: var(--muted);
+  font-weight: 400;
+  margin-top: 4px;
+}
+@supports (appearance: base-select) {
+  @media (min-width: 834px) {
+    .rule-type-select::picker(select) {
+      inline-size: max(anchor-size(width), 380px);
+    }
+  }
+}
